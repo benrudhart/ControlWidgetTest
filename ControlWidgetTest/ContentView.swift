@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage(UserDefaults.isOnKey, store: .appGroup) private var isOn = false
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Toggle("Control value", isOn: $isOn)
         }
         .padding()
     }
